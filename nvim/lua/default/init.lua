@@ -1,3 +1,3 @@
-require("default.remap")
-require("default.options")
-require("default.color")
+require 'default.remap'
+require 'default.options'
+require 'default.color'

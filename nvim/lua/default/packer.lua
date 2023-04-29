@@ -1,72 +1,74 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	  -- Packer can manage itself
-	  use 'wbthomason/packer.nvim'
-
-          use {
-		  'nvim-telescope/telescope.nvim', tag = '0.1.1',
-		  -- or                            , branch = '0.1.x',
-		  requires = { {'nvim-lua/plenary.nvim'} }
-	  }
-	  use 'AlexvZyl/nordic.nvim'
-	  use {
-		  'nvim-treesitter/nvim-treesitter',
-		  run = function()
-			  local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-			  ts_update()
-	end,}
-use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v2.x',
-	  requires = {
-	    -- LSP Support
-	    {'neovim/nvim-lspconfig'},             -- Required
-	    {                                      -- Optional
-	      'williamboman/mason.nvim',
-	      run = function()
-		        pcall(vim.cmd, 'MasonUpdate')
-		      end,
-	    },
-	    {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-	    -- Autocompletion
-	    {'hrsh7th/nvim-cmp'},     -- Required
-	    {'hrsh7th/cmp-nvim-lsp'}, -- Required
-	    {'L3MON4D3/LuaSnip'},     -- Required
-	  }
-	}
-use {
-      "folke/which-key.nvim",
-      config = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-            require("which-key").setup {
-          -- your configuration comes here
-          -- or leave it empty to use the default settings
-          -- refer to the configuration section below
-        }
-          end
-    }
-use {
-        'numToStr/Comment.nvim',
-        config = function()
-                require('Comment').setup()
-            end
-    }
-    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
 
   use {
-        'norcalli/nvim-colorizer.lua',
-        config = function ()
-            require('colorizer').setup()
-        end, -- ./nvim-colorizer.lua
-      }
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.1',
+    -- or                            , branch = '0.1.x',
+    requires = { { 'nvim-lua/plenary.nvim' } },
+  }
+  use 'AlexvZyl/nordic.nvim'
   use {
-        'jose-elias-alvarez/null-ls.nvim',
-        requires = { 'nvim-lua/plenary.nvim' },
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update { with_sync = true }
+      ts_update()
+    end,
+  }
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v2.x',
+    requires = {
+      -- LSP Support
+      { 'neovim/nvim-lspconfig' }, -- Required
+      { -- Optional
+        'williamboman/mason.nvim',
+        run = function()
+          pcall(vim.cmd, 'MasonUpdate')
+        end,
+      },
+      { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+
+      -- Autocompletion
+      { 'hrsh7th/nvim-cmp' }, -- Required
+      { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+      { 'L3MON4D3/LuaSnip' }, -- Required
+    },
+  }
+  use {
+    'folke/which-key.nvim',
+    config = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+      require('which-key').setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
       }
-    use {
-        'lukas-reineke/lsp-format.nvim'
-    }
+    end,
+  }
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end,
+  }
+  use { 'akinsho/bufferline.nvim', tag = '*', requires = 'nvim-tree/nvim-web-devicons' }
+
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require('colorizer').setup()
+    end, -- ./nvim-colorizer.lua
+  }
+  use {
+    'jose-elias-alvarez/null-ls.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+  }
+  use {
+    'lukas-reineke/lsp-format.nvim',
+  }
 end)

@@ -1,5 +1,5 @@
 vim.opt.termguicolors = true
-require("bufferline").setup{}
+require('bufferline').setup {}
 
 vim.keymap.set('n', '<leader>bp', '<cmd>BufferLinePick<cr>', { desc = 'pick' })
 vim.keymap.set('n', '<leader>b1', '<cmd>BufferLineGoToBuffer 1<cr>', { desc = 'goto 1' })
