@@ -24,7 +24,8 @@ return require('packer').startup(function(use)
     requires = {
       -- LSP Support
       { 'neovim/nvim-lspconfig' }, -- Required
-      { -- Optional
+      {
+        -- Optional
         'williamboman/mason.nvim',
         run = function()
           pcall(vim.cmd, 'MasonUpdate')
@@ -70,5 +71,17 @@ return require('packer').startup(function(use)
   }
   use {
     'lukas-reineke/lsp-format.nvim',
+  }
+  -- use {
+  --  'iamcco/markdown-preview.nvim',
+  -- setup = [[require'plugin.markdown-preview']], -- ./markdown-preview.lua
+  -- run = 'cd app & npm install',
+  -- ft = { 'markdown', 'vimwiki' },
+  --}
+  use 'lukas-reineke/indent-blankline.nvim'
+  use { 'catppuccin/nvim', as = 'catppuccin' }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
   }
 end)
