@@ -104,4 +104,16 @@ return require('packer').startup(function(use)
     use 'nvim-tree/nvim-tree.lua'
     use 'm4xshen/smartcolumn.nvim'
     use { "ellisonleao/glow.nvim", config = function() require("glow").setup() end }
+    use {
+        'vimwiki/vimwiki',
+        config = function()
+            vim.g.vimwiki_list = {
+                {
+                    path   = '~/',
+                    syntax = 'markdown',
+                    ext    = '.md',
+                }
+            }
+        end
+    }
 end)
