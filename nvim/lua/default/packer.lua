@@ -8,7 +8,8 @@ return require('packer').startup(function(use)
         'nvim-telescope/telescope.nvim',
         tag = '0.1.1',
         -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } },
+        requires = { { 'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope-ghq.nvim', } },
     }
     use 'AlexvZyl/nordic.nvim'
     use {
@@ -36,11 +37,11 @@ return require('packer').startup(function(use)
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
             -- Autocompletion
-            { 'hrsh7th/nvim-cmp' }, -- Required
+            { 'hrsh7th/nvim-cmp' },     -- Required
             { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'L3MON4D3/LuaSnip' }, -- Required
-            { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
-            { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' }
+            { 'L3MON4D3/LuaSnip' },     -- Required
+            { 'hrsh7th/cmp-path',                 after = 'nvim-cmp' },
+            { 'hrsh7th/cmp-buffer',               after = 'nvim-cmp' }
         },
     }
     use {
