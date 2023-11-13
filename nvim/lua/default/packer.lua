@@ -79,12 +79,7 @@ return require('packer').startup(function(use)
   use {
     'lukas-reineke/lsp-format.nvim',
   }
-  -- use {
-  --  'iamcco/markdown-preview.nvim',
-  -- setup = [[require'plugin.markdown-preview']], -- ./markdown-preview.lua
-  -- run = 'cd app & npm install',
-  -- ft = { 'markdown', 'vimwiki' },
-  --}
+
   use 'lukas-reineke/indent-blankline.nvim'
   use { 'catppuccin/nvim', as = 'catppuccin' }
   use {
@@ -129,5 +124,14 @@ return require('packer').startup(function(use)
     config = function()
       require('registers').setup()
     end,
+  }
+
+  use {
+    'iamcco/markdown-preview.nvim',
+    run = 'cd app && npm install',
+    setup = function()
+      vim.g.mkdp_filetypes = { 'markdown' }
+    end,
+    ft = { 'markdown' },
   }
 end)
