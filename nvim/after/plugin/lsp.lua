@@ -87,6 +87,7 @@ null_ls.setup {
     -- null_ls.builtins.diagnostics.commitlint.with {
     --       extra_args = { '-g', vim.fn.expand '~/.config/commitlint/config.js' },
     -- },
+    null_ls.builtins.diagnostics.commitlint,
     null_ls.builtins.diagnostics.shellcheck,
     -- null_ls.builtins.diagnostics.yamllint,
     null_ls.builtins.formatting.stylua,
