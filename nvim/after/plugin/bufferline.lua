@@ -1,7 +1,7 @@
 vim.opt.termguicolors = true
 require('bufferline').setup {}
 
-vim.keymap.set('n', '<leader>bp', '<cmd>BufferLinePick<cr>', { desc = 'pick' })
+vim.keymap.set('n', '<leader>bP', '<cmd>BufferLinePick<cr>', { desc = 'pick' })
 vim.keymap.set('n', '<leader>b1', '<cmd>BufferLineGoToBuffer 1<cr>', { desc = 'goto 1' })
 vim.keymap.set('n', '<leader>b2', '<cmd>BufferLineGoToBuffer 2<cr>', { desc = 'goto 2' })
 vim.keymap.set('n', '<leader>b3', '<cmd>BufferLineGoToBuffer 3<cr>', { desc = 'goto 3' })
@@ -14,4 +14,7 @@ vim.keymap.set('n', '<leader>b9', '<cmd>BufferLineGoToBuffer 9<cr>', { desc = 'g
 vim.keymap.set('n', '[b', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Previous buffer' })
 vim.keymap.set('n', ']b', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next buffer' })
 vim.keymap.set('n', '<leader>bp', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Previous buffer' })
-vim.keymap.set('n', '<leader>bn', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next buffer' })
+vim.keymap.set('n', '<leader>bN', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next buffer' })
+vim.keymap.set("n", "<leader>bw", "<cmd>bw<cr>", { desc = "Wipeout buffer" })
+vim.keymap.set("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Delete buffer" })
+vim.keymap.set("n", "<leader>bn", "<cmd>enew<cr>", { desc = "New buffer" })
