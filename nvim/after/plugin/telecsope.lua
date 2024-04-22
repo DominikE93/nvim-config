@@ -9,4 +9,5 @@ vim.keymap.set('n', '<leader>gr', '<cmd>Telescope ghq list<cr>', { desc = 'repos
 vim.keymap.set('n', '<leader>bb', builtin.buffers, { desc = 'list buffer'})
 vim.keymap.set('n', '<leader>ll', builtin.diagnostics, { desc = 'list diagnostics'})
 vim.keymap.set('n', '<leader>cp', builtin.registers, { desc = 'registers'})
-vim.keymap.set('n', '<leader>fw', builtin.current_buffer_fuzzy_find, { desc = 'fuzzy find buffer'})
+vim.keymap.set('n', '<leader>fb', builtin.current_buffer_fuzzy_find, { desc = 'fuzzy find buffer'})
+vim.keymap.set('n', '<leader>fc', builtin.command_history, { desc = 'nvim command history'})
