@@ -1,9 +1,10 @@
 local options = {
   formatters_by_ft = {
-    lua = { "stylua" },
-    terraform = { "terrform_fmt" },
-    json = { "jq" },
-    yaml = { "yamlfmt" },
+    lua = { 'stylua' },
+    terraform = { 'terrform_fmt' },
+    json = { 'jq' },
+    -- TODO: Muss im Team geklärt werden
+    -- yaml = { "yamlfmt" },
   },
 
   format_on_save = {
@@ -13,4 +14,4 @@ local options = {
   },
 }
 
-require("conform").setup(options)
+require('conform').setup(options)
