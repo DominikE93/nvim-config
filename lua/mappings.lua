@@ -17,3 +17,14 @@ map('v', '<leader>p', '"+p', { desc = 'paste from clipboard' })
 local builtin = require 'telescope.builtin'
 vim.keymap.set('n', '<leader>fc', builtin.command_history, { desc = 'nvim command history' })
 vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = 'find git files' })
+
+-- Trouble
+map('n', '<leader>dl', function()
+  require('trouble').toggle()
+end, { desc = 'open diagnostics' })
+map('n', '<leader>dn', function()
+  require('trouble').next { skip_groups = true, jump = true }
+end, { desc = 'Next diagnostic' })
+map('n', '<leader>dp', function()
+  require('trouble').previous { skip_groups = true, jump = true }
+end, { desc = 'previous diagnostic' })
