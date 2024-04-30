@@ -12,7 +12,7 @@ return {
         'prettier',
         -- terraform
         'trivy',
-        'tflint',
+        -- 'tflint', Scheint nicht zu klappen. Lieber selbst installieren
         'terraform-ls',
         'markdownlint',
         -- git/github
